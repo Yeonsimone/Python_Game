@@ -51,6 +51,17 @@ while running:
                 to_y = 0
 character_x_pos += to_x
 character_y_pos += to_y
+# 가로 경계값 처리
+if character_x_pos < 0:
+    character_x_pos = 0
+elif character_x_pos > screen_width - character_width:
+    character_x_pos = screen_width-character_width
+# 세로 경계값 처리
+if character_y_pos < 0:
+    character_y_pos = 0
+elif character_y_pos > screen_width - character_height:
+    character_y_pos = screen_width-character_height
+
 
 screen.blit(background, (0, 0))  # 배경그리기
 
